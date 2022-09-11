@@ -181,8 +181,7 @@
 
     });
 
-    $('#libanjir').addClass('active');
-    $('#liManajemenbanjir').addClass('active');
+    $('#liDataBanjir').addClass('active');
 
 </script>
 @endsection

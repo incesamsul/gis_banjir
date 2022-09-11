@@ -35,6 +35,15 @@ class Admin extends Controller
         return view('pages.banjir.index', $data);
     }
 
+    public function hasilClustering()
+    {
+        $data['banjir'] = Banjir::all();
+        $data['centeroid'] = Banjir::take(3)->get();
+        return view('pages.hasil_cluster.index', $data);
+    }
+
+
+
 
     public function createDataBanjir(Request $request)
     {
