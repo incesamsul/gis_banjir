@@ -13,7 +13,7 @@ use function PHPUnit\Framework\isNull;
 
 function getJumlahTerdampak($kerusakan, $titikBencana)
 {
-    return Banjir::where('kerusakan', $kerusakan)->where('titik_bencana', $titikBencana)->get();
+    return Banjir::where('kerusakan', $kerusakan)->where('kecamatan', $titikBencana)->get();
 }
 
 function removeSpace($string)

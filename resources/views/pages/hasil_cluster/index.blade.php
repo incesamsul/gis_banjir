@@ -28,11 +28,11 @@
                             @foreach ($banjir as $row)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->titik_bencana }}</td>
+                                    <td>{{ $row->kecamatan }}</td>
                                     <td>{{ $row->terdampak_jiwa }}</td>
-                                    <td>{{ count(getJumlahTerdampak('berat', $row->titik_bencana)) }}</td>
-                                    <td>{{ count(getJumlahTerdampak('sedang', $row->titik_bencana)) }}</td>
-                                    <td>{{ count(getJumlahTerdampak('ringan', $row->titik_bencana)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('berat', $row->kecamatan)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('sedang', $row->kecamatan)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('ringan', $row->kecamatan)) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -69,9 +69,9 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $row->terdampak_jiwa }}</td>
-                                    <td>{{ count(getJumlahTerdampak('berat', $row->titik_bencana)) }}</td>
-                                    <td>{{ count(getJumlahTerdampak('sedang', $row->titik_bencana)) }}</td>
-                                    <td>{{ count(getJumlahTerdampak('ringan', $row->titik_bencana)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('berat', $row->kecamatan)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('sedang', $row->kecamatan)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('ringan', $row->kecamatan)) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -109,17 +109,17 @@
                         <tbody>
                             @foreach ($banjir as $i=>$row)
                             <?php
-                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
-                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
-                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
+                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
+                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
+                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
                             $min = min($c1,$c2,$c3);
                             ?>
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $row->terdampak_jiwa }}</td>
-                                    <td>{{ count(getJumlahTerdampak('berat', $row->titik_bencana)) }}</td>
-                                    <td>{{ count(getJumlahTerdampak('sedang', $row->titik_bencana)) }}</td>
-                                    <td>{{ count(getJumlahTerdampak('ringan', $row->titik_bencana)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('berat', $row->kecamatan)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('sedang', $row->kecamatan)) }}</td>
+                                    <td>{{ count(getJumlahTerdampak('ringan', $row->kecamatan)) }}</td>
                                     <td>
                                         {{ $c1 }}
                                     </td>
@@ -177,9 +177,9 @@
                         <tbody>
                             @foreach ($banjir as $i=>$row)
                             <?php
-                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
-                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
-                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
+                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
+                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
+                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
                             $min = min($c1,$c2,$c3);
 
                             $cluster = 0;
@@ -227,9 +227,9 @@
                     @foreach ($banjir as $i=>$row)
                             <?php
 
-                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
-                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
-                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
+                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
+                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
+                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
                             $min = min($c1,$c2,$c3);
                             $cluster = 0;
                             if($c1 == $min){
@@ -291,9 +291,9 @@
                         <tbody>
                             @foreach ($banjir as $i=>$row)
                             <?php
-                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
-                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
-                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
+                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
+                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
+                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
                             $min = min($c1,$c2,$c3);
 
                             $cluster = 0;
@@ -308,7 +308,7 @@
                             }
                             ?>
                                 <tr>
-                                    <td>{{ $row->titik_bencana }}</td>
+                                    <td>{{ $row->kecamatan }}</td>
                                     <td>
                                         @if ($cluster == 1)
                                             <span class="badge badge-success">Ringan</span>
@@ -346,9 +346,9 @@
                     @foreach ($banjir as $i=>$row)
                             <?php
 
-                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
-                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
-                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
+                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
+                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
+                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
                             $min = min($c1,$c2,$c3);
                             $cluster = 0;
                             if($c1 == $min){
@@ -390,9 +390,9 @@
                     @foreach ($banjir as $i=>$row)
                             <?php
 
-                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
-                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
-                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->titik_bencana) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->titik_bencana) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->titik_bencana) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
+                            $c1 = sqrt(pow($row->terdampak_jiwa - $banjir[0]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[0]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[0]->terdampak_jiwa)), 2));
+                            $c2 = sqrt(pow($row->terdampak_jiwa - $banjir[1]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[1]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[1]->terdampak_jiwa)), 2));
+                            $c3 = sqrt(pow($row->terdampak_jiwa - $banjir[2]->terdampak_jiwa, 2) + pow(count(getJumlahTerdampak('berat',$row->kecamatan) )- count(getJumlahTerdampak('berat',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('ringan',$row->kecamatan) )- count(getJumlahTerdampak('ringan',$banjir[2]->terdampak_jiwa)), 2) + pow(count(getJumlahTerdampak('sedang',$row->kecamatan) )- count(getJumlahTerdampak('sedang',$banjir[2]->terdampak_jiwa)), 2));
                             $min = min($c1,$c2,$c3);
                             $cluster = 0;
                             if($c1 == $min){
