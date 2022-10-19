@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Banjir;
 use App\Models\FavoritModel;
 use App\Models\KategoriModel;
 use App\Models\LogAktivitasModel;
@@ -10,20 +11,9 @@ use PhpParser\Node\Expr\FuncCall;
 
 use function PHPUnit\Framework\isNull;
 
-function getKategoriMenu(){
-    return KategoriModel::all();
-}
-
-function getNamaKategoriById($idKategori){
-    return KategoriModel::where('id_kategori',$idKategori)->first();
-}
-
-
-function isThisMyFavorit($idInfo){
-    return FavoritModel::where([
-        'id_user' => auth()->user()->id,
-        'id_info' => $idInfo
-    ])->first();
+function getJumlahTerdampak($kerusakan, $titikBencana)
+{
+    return Banjir::where('kerusakan', $kerusakan)->where('titik_bencana', $titikBencana)->get();
 }
 
 function removeSpace($string)
