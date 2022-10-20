@@ -331,6 +331,22 @@
       </div>
       <div class="row">
         <div class="col-sm-12 table-responsive">
+            <style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="pangkep" src="//www.arcgis.com/apps/Embed/index.html?webmap=e9069b28eda34726909a9e72323b2051&extent=119.3777,-4.9018,119.7368,-4.7016&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="banjir_section layout_padding" id="cluster">
+    <div class="catagory_container">
+    <div class="container ">
+        <div class="heading_container heading_center">
+        <div class="serach_and_title mb-4 pb-3 d-flex align-items-start">
+            <h2 id="pencarian-title">Kecamatan berdasarakan kategori</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 table-responsive">
             <table class="table table-striped table-hover table-user table-action-hover" id="table-data">
                 <thead>
                     <tr>
