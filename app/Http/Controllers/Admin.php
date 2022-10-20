@@ -51,8 +51,8 @@ class Admin extends Controller
         Banjir::create([
             'tgl_kejadian' => $request->tgl_kejadian,
             'kecamatan' => $request->kecamatan,
-            'kelurahan' => $request->kelurahan,
-            'titik_bencana' => $request->titik_bencana,
+            // 'kelurahan' => $request->kelurahan,
+            // 'titik_bencana' => $request->titik_bencana,
             'terdampak_kk' => $request->terdampak_kk,
             'terdampak_jiwa' => $request->terdampak_jiwa,
             'kerusakan' => $request->kerusakan,
@@ -66,8 +66,8 @@ class Admin extends Controller
         Banjir::where('id_banjir', $request->id)->update([
             'tgl_kejadian' => $request->tgl_kejadian,
             'kecamatan' => $request->kecamatan,
-            'kelurahan' => $request->kelurahan,
-            'titik_bencana' => $request->titik_bencana,
+            // 'kelurahan' => $request->kelurahan,
+            // 'titik_bencana' => $request->titik_bencana,
             'terdampak_kk' => $request->terdampak_kk,
             'terdampak_jiwa' => $request->terdampak_jiwa,
             'kerusakan' => $request->kerusakan,

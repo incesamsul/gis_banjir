@@ -23,8 +23,8 @@
                                 <th width="5%" class="sorting" data-sorting_type="asc" data-column_name="id" style="cursor: pointer">ID <span id="id_icon"></span></th>
                                 <th>Tgl kejadian</th>
                                 <th>Kecamatan</th>
-                                <th>Kelurahan</th>
-                                <th>titk bencana</th>
+                                {{-- <th>Kelurahan</th> --}}
+                                {{-- <th>titk bencana</th> --}}
                                 <th>terdampak(kk)</th>
                                 <th>terdampak(jiwa)</th>
                                 <th>kerusakan</th>
@@ -37,8 +37,8 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $row->tgl_kejadian }}</td>
                                     <td>{{ $row->kecamatan }}</td>
-                                    <td>{{ $row->kelurahan }}</td>
-                                    <td>{{ $row->titik_bencana }}</td>
+                                    {{-- <td>{{ $row->kelurahan }}</td> --}}
+                                    {{-- <td>{{ $row->titik_bencana }}</td> --}}
                                     <td>{{ $row->terdampak_kk }}</td>
                                     <td>{{ $row->terdampak_jiwa }}</td>
                                     <td>{{ $row->kerusakan }}</td>
@@ -82,31 +82,31 @@
             <div class="form-group">
                 <label for="tgl_kejadian">tgl_kejadian</label>
                 <input type="hidden" name="id" id="id" class="form-control">
-                <input type="date" name="tgl_kejadian" id="tgl_kejadian" class="form-control">
+                <input required type="date" name="tgl_kejadian" id="tgl_kejadian" class="form-control">
             </div>
             <div class="form-group">
                 <label for="kecamatan">kecamatan</label>
-                <input type="text" name="kecamatan" id="kecamatan" class="form-control">
+                <input required type="text" name="kecamatan" id="kecamatan" class="form-control">
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="kelurahan">kelurahan</label>
-                <input type="text" name="kelurahan" id="kelurahan" class="form-control">
+                <input required type="text" name="kelurahan" id="kelurahan" class="form-control">
             </div>
             <div class="form-group">
                 <label for="titik_bencana">titik_bencana</label>
-                <input type="text" name="titik_bencana" id="titik_bencana" class="form-control">
-            </div>
+                <input required type="text" name="titik_bencana" id="titik_bencana" class="form-control">
+            </div> --}}
             <div class="form-group">
                 <label for="terdampak_kk">terdampak_kk</label>
-                <input type="text" name="terdampak_kk" id="terdampak_kk" class="form-control">
+                <input required type="text" name="terdampak_kk" id="terdampak_kk" class="form-control">
             </div>
             <div class="form-group">
                 <label for="terdampak_jiwa">terdampak_jiwa</label>
-                <input type="text" name="terdampak_jiwa" id="terdampak_jiwa" class="form-control">
+                <input required type="text" name="terdampak_jiwa" id="terdampak_jiwa" class="form-control">
             </div>
             <div class="form-group">
                 <label for="kerusakan">kerusakan</label>
-                <select name="kerusakan" id="kerusakan" class="form-control">
+                <select required name="kerusakan" id="kerusakan" class="form-control">
                     <option value=""> -- kerusakan --</option>
                     <option value="berat">berat</option>
                     <option value="sedang">sedang</option>
@@ -133,8 +133,8 @@
             $('#id').val(edit.id_banjir);
             $('#tgl_kejadian').val(edit.tgl_kejadian);
             $('#kecamatan').val(edit.kecamatan);
-            $('#kelurahan').val(edit.kelurahan);
-            $('#titik_bencana').val(edit.titik_bencana);
+                // $('#kelurahan').val(edit.kelurahan);
+                // $('#titik_bencana').val(edit.titik_bencana);
             $('#terdampak_kk').val(edit.terdampak_kk);
             $('#terdampak_jiwa').val(edit.terdampak_jiwa);
             $('#kerusakan').val(edit.kerusakan);

@@ -17,8 +17,8 @@ class CreateBanjirTable extends Migration
             $table->increments('id_banjir');
             $table->date('tgl_kejadian');
             $table->string('kecamatan');
-            $table->string('kelurahan');
-            $table->string('titik_bencana');
+            // $table->string('kelurahan');
+            // $table->string('titik_bencana');
             $table->string('terdampak_kk');
             $table->string('terdampak_jiwa');
             $table->enum('kerusakan', ['berat', 'sedang', 'ringan']);
