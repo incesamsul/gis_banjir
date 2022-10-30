@@ -29,6 +29,7 @@ Route::post('/postlogin', [LoginController::class, 'postLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/', [Home::class, 'beranda']);
+Route::get('/{tahun}', [Home::class, 'beranda']);
 
 
 Route::get('/tentang_aplikasi', [Home::class, 'tentangAplikasi']);

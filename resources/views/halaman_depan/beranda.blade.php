@@ -49,12 +49,34 @@
 
 <!-- catagory section -->
 
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 mt-5">
+                <div class="form-group">
+                    <h3>Filter tahun</h3>
+                    <div class="filter d-flex ">
+                        <?php
+                        echo '<select class="form-control mr-3" id="years">' . PHP_EOL;
+                            echo '<option value="">-- filter --</option>' . PHP_EOL;
+                        for($i = date("Y")-3; $i <=date("Y")+5; $i++){
+                            echo '<option value="' . $i . '">' . $i . '</option>' . PHP_EOL;
+                        }
+                        echo '</select>'; ?>
+                        <button class="btn btn-success" id="btn-filter"><i class="fas fa-sync"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="banjir_section layout_padding" id="data">
     <div class="catagory_container">
     <div class="container ">
         <div class="heading_container heading_center">
         <div class="serach_and_title mb-4 pb-3 d-flex align-items-start">
-            <h2 id="pencarian-title">Data Banjir</h2>
+            <h2 id="pencarian-title">Data Banjir {{ $tahun }}</h2>
         </div>
       </div>
       <div class="row">
@@ -464,6 +486,11 @@
 @section('script')
 <script>
     $(document).ready(function() {
+
+        $('#btn-filter').on('click',function(){
+            let years = $('#years').val();
+            window.location.href = '/' + years;
+        })
 
         var ctx = document.getElementById("myChart3");
     if (ctx) {

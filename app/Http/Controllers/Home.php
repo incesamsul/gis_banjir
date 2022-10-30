@@ -6,10 +6,14 @@ use App\Models\Banjir;
 
 class Home extends Controller
 {
-    public function beranda()
+    public function beranda($year = 2022)
     {
-        $data['banjir'] = Banjir::all();
-        $data['centeroid'] = Banjir::take(3)->get();
+        $data['banjir'] = Banjir::whereYear('tgl_kejadian', '=', $year)->get();
+        $data['centeroid'] = Banjir::whereYear('tgl_kejadian', '=', $year)->take(3)->get();
+        if (count($data['centeroid']) < 3) {
+            return redirect('/')->with('message', 'belum ada data banjir untuk tahun terpilih');
+        }
+        $data['tahun'] = $year;
         return view('halaman_depan.beranda', $data);
     }
 }
