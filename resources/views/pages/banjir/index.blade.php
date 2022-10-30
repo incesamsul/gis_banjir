@@ -25,9 +25,11 @@
                                 <th>Kecamatan</th>
                                 {{-- <th>Kelurahan</th> --}}
                                 {{-- <th>titk bencana</th> --}}
-                                <th>terdampak(kk)</th>
+                                {{-- <th>terdampak(kk)</th> --}}
                                 <th>terdampak(jiwa)</th>
-                                <th>kerusakan</th>
+                                <th>kerusakan berat</th>
+                                <th>kerusakan sedang</th>
+                                <th>kerusakan ringan</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -39,9 +41,11 @@
                                     <td>{{ $row->kecamatan }}</td>
                                     {{-- <td>{{ $row->kelurahan }}</td> --}}
                                     {{-- <td>{{ $row->titik_bencana }}</td> --}}
-                                    <td>{{ $row->terdampak_kk }}</td>
+                                    {{-- <td>{{ $row->terdampak_kk }}</td> --}}
                                     <td>{{ $row->terdampak_jiwa }}</td>
-                                    <td>{{ $row->kerusakan }}</td>
+                                    <td>{{ $row->kerusakan_berat }}</td>
+                                    <td>{{ $row->kerusakan_sedang }}</td>
+                                    <td>{{ $row->kerusakan_ringan }}</td>
                                     <td class="option">
                                         <div class="btn-group dropleft btn-option">
                                             <i type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,14 +101,22 @@
                 <input required type="text" name="titik_bencana" id="titik_bencana" class="form-control">
             </div> --}}
             <div class="form-group">
-                <label for="terdampak_kk">terdampak_kk</label>
-                <input required type="text" name="terdampak_kk" id="terdampak_kk" class="form-control">
+                <label for="kerusakan_berat">kerusakan_berat</label>
+                <input required type="text" name="kerusakan_berat" id="kerusakan_berat" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="kerusakan_sedang">kerusakan_sedang</label>
+                <input required type="text" name="kerusakan_sedang" id="kerusakan_sedang" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="kerusakan_ringan">kerusakan_ringan</label>
+                <input required type="text" name="kerusakan_ringan" id="kerusakan_ringan" class="form-control">
             </div>
             <div class="form-group">
                 <label for="terdampak_jiwa">terdampak_jiwa</label>
                 <input required type="text" name="terdampak_jiwa" id="terdampak_jiwa" class="form-control">
             </div>
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="kerusakan">kerusakan</label>
                 <select required name="kerusakan" id="kerusakan" class="form-control">
                     <option value=""> -- kerusakan --</option>
@@ -112,7 +124,7 @@
                     <option value="sedang">sedang</option>
                     <option value="ringan">ringan</option>
                 </select>
-            </div>
+            </div> --}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -135,7 +147,10 @@
             $('#kecamatan').val(edit.kecamatan);
                 // $('#kelurahan').val(edit.kelurahan);
                 // $('#titik_bencana').val(edit.titik_bencana);
-            $('#terdampak_kk').val(edit.terdampak_kk);
+            // $('#terdampak_kk').val(edit.terdampak_kk);
+            $('#kerusakan_berat').val(edit.kerusakan_berat);
+            $('#kerusakan_sedang').val(edit.kerusakan_sedang);
+            $('#kerusakan_ringan').val(edit.kerusakan_ringan);
             $('#terdampak_jiwa').val(edit.terdampak_jiwa);
             $('#kerusakan').val(edit.kerusakan);
             $('#formBanjir').attr('action', '/admin/update_data_banjir');

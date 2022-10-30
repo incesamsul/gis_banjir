@@ -19,9 +19,12 @@ class CreateBanjirTable extends Migration
             $table->string('kecamatan');
             // $table->string('kelurahan');
             // $table->string('titik_bencana');
-            $table->string('terdampak_kk');
+            // $table->string('terdampak_kk');
             $table->string('terdampak_jiwa');
-            $table->enum('kerusakan', ['berat', 'sedang', 'ringan']);
+            $table->string('kerusakan_berat');
+            $table->string('kerusakan_sedang');
+            $table->string('kerusakan_ringan');
+            // $table->enum('kerusakan', ['berat', 'sedang', 'ringan']);
             $table->timestamps();
         });
     }

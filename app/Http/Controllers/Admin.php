@@ -53,9 +53,12 @@ class Admin extends Controller
             'kecamatan' => $request->kecamatan,
             // 'kelurahan' => $request->kelurahan,
             // 'titik_bencana' => $request->titik_bencana,
-            'terdampak_kk' => $request->terdampak_kk,
+            // 'terdampak_kk' => $request->terdampak_kk,
             'terdampak_jiwa' => $request->terdampak_jiwa,
-            'kerusakan' => $request->kerusakan,
+            'kerusakan_berat' => $request->kerusakan_berat,
+            'kerusakan_ringan' => $request->kerusakan_ringan,
+            'kerusakan_sedang' => $request->kerusakan_sedang,
+            // 'kerusakan' => $request->kerusakan,
         ]);
 
         return redirect()->back()->with('message', 'data berhasil disimpan');
@@ -68,9 +71,11 @@ class Admin extends Controller
             'kecamatan' => $request->kecamatan,
             // 'kelurahan' => $request->kelurahan,
             // 'titik_bencana' => $request->titik_bencana,
-            'terdampak_kk' => $request->terdampak_kk,
+            // 'terdampak_kk' => $request->terdampak_kk,
             'terdampak_jiwa' => $request->terdampak_jiwa,
-            'kerusakan' => $request->kerusakan,
+            'kerusakan_berat' => $request->kerusakan_berat,
+            'kerusakan_ringan' => $request->kerusakan_ringan,
+            'kerusakan_sedang' => $request->kerusakan_sedang,
         ]);
         return redirect()->back()->with('message', 'data berhasil diupdate');
     }
