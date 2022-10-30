@@ -35,10 +35,14 @@ class Admin extends Controller
         return view('pages.banjir.index', $data);
     }
 
-    public function hasilClustering()
+    public function hasilClustering($year = 2022)
     {
-        $data['banjir'] = Banjir::all();
-        $data['centeroid'] = Banjir::take(3)->get();
+        $data['banjir'] = Banjir::whereYear('tgl_kejadian', '=', $year)->get();
+        $data['centeroid'] = Banjir::whereYear('tgl_kejadian', '=', $year)->take(3)->get();
+        if (count($data['centeroid']) < 3) {
+            return redirect('/admin/data_banjir')->with('message', 'belum ada data banjir untuk tahun terpilih');
+        }
+        $data['tahun'] = $year;
         return view('pages.hasil_cluster.index', $data);
     }
 

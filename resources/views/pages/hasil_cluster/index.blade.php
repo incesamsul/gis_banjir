@@ -3,6 +3,25 @@
 @section('content')
 <section class="section">
     <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body d-flex justify-content-between">
+                    <h3>Data banjir tahun {{ $tahun }}</h3>
+                    <div class="filter d-flex ">
+                        <?php
+                        echo '<select class="form-control mr-3" id="years">' . PHP_EOL;
+                            echo '<option value="">-- filter --</option>' . PHP_EOL;
+                        for($i = date("Y")-3; $i <=date("Y")+5; $i++){
+                            echo '<option value="' . $i . '">' . $i . '</option>' . PHP_EOL;
+                        }
+                        echo '</select>'; ?>
+                        <button class="btn btn-success" id="btn-filter"><i class="fas fa-sync"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex  justify-content-between">
@@ -423,6 +442,12 @@
 @section('script')
 <script>
     $(document).ready(function() {
+
+
+        $('#btn-filter').on('click',function(){
+            let years = $('#years').val();
+            window.location.href = '/admin/hasil_clustering/' + years;
+        })
 
         var ctx = document.getElementById("myChart3");
     if (ctx) {
