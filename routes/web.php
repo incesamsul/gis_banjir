@@ -29,7 +29,7 @@ Route::post('/postlogin', [LoginController::class, 'postLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/', [Home::class, 'beranda']);
-Route::get('/{tahun}', [Home::class, 'beranda']);
+
 
 
 Route::get('/tentang_aplikasi', [Home::class, 'tentangAplikasi']);
@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator,user,penilai']], 
     Route::post('/ubah_foto_profile', [General::class, 'ubahFotoProfile']);
     Route::post('/ubah_role', [General::class, 'ubahRole']);
 });
-
+// Route::get('/{tahun}', [Home::class, 'beranda']);
 // ADMIN ROUTE
 Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
 });
