@@ -30,6 +30,8 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/login', [LoginController::class, 'login']);
 Route::get('/', [Home::class, 'beranda']);
 
+Route::get('/peta', [Home::class, 'peta']);
+
 
 
 Route::get('/tentang_aplikasi', [Home::class, 'tentangAplikasi']);

@@ -11,6 +11,16 @@ use PhpParser\Node\Expr\FuncCall;
 
 use function PHPUnit\Framework\isNull;
 
+function getStatus($kecamatan)
+{
+    return $kecamatan;
+    if ($kecamatan == 'MINASATENE') {
+        return 'berat';
+    } else {
+        return 'ringan';
+    }
+}
+
 function getJumlahTerdampak($kerusakan, $titikBencana)
 {
     return Banjir::where('kerusakan', $kerusakan)->where('kecamatan', $titikBencana)->get();
